@@ -1,1 +1,53 @@
 PLAN.md
+
+# Compilación del servidor
+servidor/build/
+servidor/servidor
+*.o
+*.d
+*.a
+*.so
+*.out
+
+# Volcados de memoria y depuración
+core
+core.*
+vgcore.*
+*.dSYM/
+
+# Logs
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+
+# Credenciales y configuración local
+.env
+.env.*
+*.pem
+*.key
+
+# Datos locales de PostgreSQL
+auth/pgdata/
+
+# Editores e IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# Herramientas locales
+.claude/
