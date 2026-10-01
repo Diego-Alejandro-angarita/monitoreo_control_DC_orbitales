@@ -8,11 +8,14 @@ Sistema distribuido de monitoreo y control de centros de datos orbitales basado 
 
 Nodos y clientes se comunican únicamente con el servidor.
 
+El protocolo está especificado en [docs/protocolo_SMCD.md](docs/protocolo_SMCD.md).
+
 ## Estructura
 
 | Carpeta | Contenido |
 |---|---|
 | `servidor/` | Estación de control en C (sockets Berkeley + pthreads) |
+| `docs/` | Especificación del protocolo, arquitectura y diagramas |
 
 ## Requisitos
 

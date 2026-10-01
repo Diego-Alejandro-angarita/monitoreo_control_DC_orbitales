@@ -49,11 +49,14 @@ enum smcd_error {
 #define SMCD_T_AUTH            30
 #define SMCD_T_IDLE            300
 #define SMCD_T_SERVICIO_AUTH   3
+#define SMCD_T_RESPUESTA       5
 
 #define SMCD_INTERVALO_MIN 1
 #define SMCD_INTERVALO_MAX 60
 
 #define SMCD_HIST_SIZE       10
+#define SMCD_N_DEFECTO       5
+#define SMCD_N_MAX           10
 #define SMCD_VENTANA_EVENTOS 32
 #define SMCD_MAX_NODOS       64
 #define SMCD_MAX_CLIENTES    32
