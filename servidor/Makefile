@@ -5,6 +5,7 @@ LDFLAGS = -pthread $(EXTRA)
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
 BIN = servidor
+TEST_OBJ = $(filter-out build/main.o, $(OBJ))
 
 all: $(BIN)
 
@@ -21,6 +22,12 @@ debug:
 	$(MAKE) clean
 	$(MAKE) EXTRA="-g -O0 -fsanitize=address,undefined"
 
+test: build/test_protocolo
+	./build/test_protocolo
+
+build/test_protocolo: tests/test_protocolo.c $(TEST_OBJ) | build
+	$(CC) $(CFLAGS) $< $(TEST_OBJ) -o $@ $(LDFLAGS)
+
 tsan:
 	$(MAKE) clean
 	$(MAKE) EXTRA="-g -O1 -fsanitize=thread"
@@ -30,4 +37,4 @@ clean:
 
 -include $(OBJ:.o=.d)
 
-.PHONY: all debug tsan clean
+.PHONY: all debug test tsan clean

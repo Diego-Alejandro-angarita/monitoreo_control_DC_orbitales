@@ -23,6 +23,7 @@ El protocolo está especificado en [protocolo_SMCD.md](protocolo_SMCD.md).
 | `nodos.c` | Tabla de nodos, historial y eventos circulares, ventana anti-duplicados |
 | `sesiones.c` | Tabla de sesiones autenticadas |
 | `tcp_handler.c` | Atención de una conexión TCP: `REG_NODE`, `AUTH_REQUEST`, `QUERY` |
+| `consultas.c` | Construcción de las respuestas a `QUERY` |
 | `udp_handler.c` | Procesamiento de un datagrama: `STATE_REPORT`, `EVENT` |
 | `monitor.c` | Detección de nodos inactivos |
 | `auth_cliente.c` | Consulta al servicio de autenticación |
@@ -81,7 +82,7 @@ Una línea por mensaje recibido (`RX`) o enviado (`TX`):
 <fecha-hora ISO 8601> <RX|TX> <TCP|UDP> <IP>:<puerto> <TIPO> seq=<n> len=<n> <payload>
 ```
 
-Las contraseñas se reemplazan por `***` antes de escribir la línea.
+El payload se registra completo. Los bytes no imprimibles se muestran como `.`.
 
 ## Configuración
 

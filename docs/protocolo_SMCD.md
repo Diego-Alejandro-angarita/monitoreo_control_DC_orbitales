@@ -162,6 +162,7 @@ Reglas:
 2. Las claves desconocidas DEBEN ignorarse, para permitir extensiones.
 3. El orden de los pares no tiene significado.
 4. Ningún valor puede contener `;` ni `=`. Esto incluye las contraseñas.
+5. Un mensaje recibido por el servidor PUEDE tener como máximo 32 pares; si tiene más, es `MALFORMED`.
 
 ### 4.5 Tipos de dato de los campos
 
@@ -333,7 +334,7 @@ Servidor → Cliente, TCP. Siempre incluye `status=OK`; los fallos se informan c
 | `node_id`, `estado`, `intervalo` | Datos del registro |
 | `ultimo_visto` | Segundos desde el último mensaje válido del nodo |
 | `reportes`, `perdidos`, `eventos` | Contadores de reportes recibidos, reportes perdidos (huecos de `seq_num`) y eventos |
-| `ts`, `cpu`, `temp_int`, `power`, `link` | Último reporte. Se omiten si no hay |
+| `ts`, `cpu`, `temp`, `power`, `link` | Último reporte. Se omiten si no hay |
 
 **`HISTORY`**
 
